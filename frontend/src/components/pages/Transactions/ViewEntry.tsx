@@ -25,7 +25,7 @@ export default function ViewEntry() {
     const [data, setData] = useState<transacaoProps[]>([]);
     const [selected, setSelected] = useState<number[]>([])
     const [update, setUpdate] = useState(true)
-    const blockedWhere = { include: "bote{fornecedor},usuario", limit: 200 }
+    const blockedWhere = { include: "bote{fornecedor},usuario", limit: 1000 }
     const [where, setWhere] = useState<any>({ ...blockedWhere, status: TRANSACTION_OPEN, order: "updatedAt,DESC" })
 
     const [loadingData, setLoadingData] = useState(false)
@@ -68,13 +68,13 @@ export default function ViewEntry() {
     // Quando é clicado no botão "Fechamento"
     const closeHandler = () => {
         simpleSpawnInfo("Tem certeza que deseja continuar?", async () => {
-            backend.bulkEdit("transacao", selected.map(id => {
+            setLoadingData(true)
+            await backend.bulkEdit("transacao", selected.map(id => {
                 return { id: id, status: TRANSACTION_CLOSED } as transacaoProps
             }))
-            setTimeout(() => {
-                setSelected([])
-                setUpdate(!update)
-            }, 250);
+            setLoadingData(false)
+            setSelected([])
+            setUpdate(!update)
         }, () => null)
     }
 

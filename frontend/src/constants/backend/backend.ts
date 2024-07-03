@@ -10,7 +10,18 @@ export const api_protocol = config.api_protocol
 export const api_port = config.api_port
 export const api_v = "v1"
 
-export const backendAxios = axios.create({ withCredentials: true, headers: { Authorization: `bearer ${window.localStorage.getItem("auth-token")}` } })
+let _backendAxiosCached = axios.create({ withCredentials: true, headers: { Authorization: `bearer ${window.localStorage.getItem("auth-token")}` } })
+
+export const backendAxios = () => {
+    const currentLoadedToken = window.localStorage.getItem("auth-token")
+    const currentAuthorizationHeader = _backendAxiosCached.defaults.headers.Authorization?.toString() ?? ""
+    if (!currentLoadedToken || !currentAuthorizationHeader.includes(currentLoadedToken)) {
+        console.warn("Mudando backend Axios automaticamente, o token de autorização mudou!")
+        _backendAxiosCached = axios.create({ withCredentials: true, headers: { Authorization: `bearer ${window.localStorage.getItem("auth-token")}` } })
+    }
+
+    return _backendAxiosCached
+}
 
 interface BackendResponse<T> {
     error?: boolean,

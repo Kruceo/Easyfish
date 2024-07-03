@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Bar from "./Bar";
 import Cookies from 'js-cookie'
 
-export function Proteged(props: {key:Key,children?:ReactNode}) {
+export function Proteged(props: { key: Key, children?: ReactNode }) {
 
     const navigate = useNavigate()
     const [authorized, setAuthorized] = useState<undefined | boolean>()

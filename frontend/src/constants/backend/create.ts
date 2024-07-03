@@ -17,7 +17,7 @@ async function create(tables: "fornecedor",     data: any ): Promise<AxiosRespon
 async function create(tables: string, data: any): Promise<AxiosResponse<BackendPostResponse>> {
     const full_address = `${api_protocol}://${api_address}:${api_port}/${api_v}/${tables}`
     try {
-        const response = await backendAxios.post(full_address, data)
+        const response = await backendAxios().post(full_address, data)
         return response
     } catch (error: any) {
         return error.response
@@ -34,7 +34,7 @@ async function bulkCreate(tables: "fornecedor", data: fornecedorProps[]): Promis
 async function bulkCreate(tables: string, data: any[]): Promise<AxiosResponse<BackendPostResponse>> {
     const full_address = `${api_protocol}://${api_address}:${api_port}/${api_v}/${tables}/bulk`
     try {
-        const response = await backendAxios.post(full_address, data)
+        const response = await backendAxios().post(full_address, data)
         return response
     } catch (error: any) {
         return error.response

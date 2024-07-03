@@ -25,6 +25,9 @@ export default function ViewEntry() {
     const [data, setData] = useState<transacaoProps[]>([]);
     const [selected, setSelected] = useState<number[]>([])
     const [update, setUpdate] = useState(true)
+
+    // blockedwhere é obrigadorio estar dentro do where, mesmo com as personalizações
+    // as personalizações vem do FilterEntryForm e são concatenadas junto a essas "bloqueadas"
     const blockedWhere = { include: "bote{fornecedor},usuario", limit: 1000 }
     const [where, setWhere] = useState<any>({ ...blockedWhere, status: TRANSACTION_OPEN, order: "updatedAt,DESC" })
 

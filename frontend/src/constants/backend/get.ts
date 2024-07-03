@@ -16,7 +16,7 @@ async function get(tables: allTableNames,
 
     const full_address = `${api_protocol}://${api_address}:${api_port}/${api_v}/${tables}?${obj2URLQuery(whereClause)}`
     try {
-        const response = await backendAxios.get(full_address)
+        const response = await backendAxios().get(full_address)
 
         return response
     }

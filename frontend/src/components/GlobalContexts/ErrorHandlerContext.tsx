@@ -17,7 +17,7 @@ export default function ErrorHandler(props: PropsWithChildren) {
     function pageErrorHandler(axiosResponse: AxiosResponse<any>) {
 
         if (axiosResponse.status === statusCodes.Unauthorized){
-            window.location.assign("/login")
+            simpleSpawnInfo("Não autorizado!",()=>window.location.assign("/login"))
             return 
         }
 

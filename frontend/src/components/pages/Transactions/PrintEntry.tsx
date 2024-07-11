@@ -74,8 +74,6 @@ export async function printSingleEntry(id: number | string) {
     queries.push(['println', `${"Produto".padEnd(chunkSize, ' ')} ${"Peso".padStart(chunkSize - 1, " ")} ${"Preço".padStart(chunkSize - 1, " ")} ${"Total".padStart(chunkSize - 1, " ")}`])
     queries.push(['println', '-'.repeat(width)])
 
-
-    console.log(d.data.data)
     item.transacao_itens?.forEach(each => {
         const { produto, preco, peso, valor_total } = each
 
@@ -103,7 +101,6 @@ ${beautyNumber(valor_total ?? -1).toString().padStart(chunkSize - 1, ' ')}`
 
     queries.push(['cut'])
     // setQ(queries)
-    console.log(queries)
     thermalPrinter.print(queries)
     localStorage.removeItem("printerSessionLocker")
 

@@ -65,7 +65,7 @@ export default function BoatCreationForm(props: {
 
             <RequiredLabel>Fornecedor</RequiredLabel>
 
-            <FormSelection name="fornecedor_id" defaultValue={defaultValues?.fornecedor_id} useTable="fornecedor" errored={error == "fornecedor_id"} />
+            <FormSelection name="fornecedor_id" defaultValue={defaultValues?.fornecedor_id} useTable="fornecedor" useTableWhere={{order:"nome,ASC"}} errored={error == "fornecedor_id"} />
 
             <FormInput value="Pronto" type="submit" errored={error == "submit"} />
         </OverPageForm>

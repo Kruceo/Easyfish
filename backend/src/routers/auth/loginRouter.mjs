@@ -37,12 +37,12 @@ authRouter.post("/auth/login", async (req, res) => {
         .json({ error: true, message: "Usuário ou senha inválido." })
 
     res.json(token)
+    console.log("[AUTH]",user,"authenticated")
 })
 
 authRouter.get("/auth/validate", async (req, res) => {
 
     const token = req.headers.authorization
-
     if (!token) return res.status(statusCodes.Unauthorized)
         .json({ error: true, message: "Sem as credenciais necessárias." })
 

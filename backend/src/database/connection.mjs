@@ -5,7 +5,7 @@ import cfg from "../../config/config.json" assert { type: "json" }
  * @type {import('sequelize').Sequelize}
  */
 const dbserver = new Sequelize({
-    // database: cfg.database.database,
+    database: cfg.database.database,
     schema: cfg.database.schema,
     host: cfg.database.host,
     port: cfg.database.port,

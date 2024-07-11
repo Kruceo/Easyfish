@@ -19,7 +19,7 @@ const universalRouter = new Router()
  * @param {*} next 
  */
 const databaseProtectionMiddleware = (req, res, next) => {
-    console.log(req.method.padEnd(7, ' ') + req.originalUrl.padEnd(20, ' '), req.body)
+    console.log("[V1]",req.method.padEnd(7, ' ') + req.originalUrl.padEnd(20, ' '), req.body)
     // const path = req.originalUrl.includes("usuario")
     // if (path)
     //     return res.status(statusCodes.NotImplemented).json({

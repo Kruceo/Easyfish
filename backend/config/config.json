@@ -1,9 +1,10 @@
 {
     "database": {
+        "database":"postgres",
+        "schema": "principal",
         "username": "postgres",
         "password": "example",
         "port": 5432,
-        "schema": "principal",
         "host": "localhost",
         "dialect": "postgres"
     },

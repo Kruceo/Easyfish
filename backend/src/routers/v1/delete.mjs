@@ -2,7 +2,7 @@ import tables from "../../database/tables.mjs"
 import statusCodes from "../../utils/statusCode.mjs"
 import { upperCaseLetter } from "../../utils/stringUtils.mjs"
 
-const blockedTables = ["usuario"]
+const blockedTables = ["usuario","users","user","usuarios"]
 
 /**
  * V1 request handler to be used in Routers 
@@ -36,7 +36,7 @@ export default async function deleteRequestHandler(req, res) {
         await item.destroy()
     } catch (error) {
         return res.status(statusCodes.InternalServerError)
-            .json({ error: true, message: "Houve um erro de SQL: " + error })
+            .json({ error: true, message: "Houve um erro interno: " + error })
     }
 
     res.json({ message: "O item foi removido com sucesso." })

@@ -6,9 +6,6 @@ import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import universalRouter from './src/routers/v1/router.mjs'
 
-// import https from 'https'
-// const server = https.createServer({key:cfg.server.ssl.})
-
 const app = express()
 
 app.use(express.json({ limit: "2mb" }))

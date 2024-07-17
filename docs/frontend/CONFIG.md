@@ -15,7 +15,8 @@ Exemplo:
       "address": "192.168.0.62",
       "protocol": "http",
       "port": 8888
-  }
+  },
+  "dashboard_custom_page":null
 }
 ```
 
@@ -36,3 +37,9 @@ A configuração da impressora deve ser de acordo com o servidor [kruceo/thermal
 |address      |Endereço de IP do servidor                     |
 |protocol     |Protocolo para comunicação com servidor        |
 |port         |Porta do servidor                              |
+
+## Extras 
+
+|Chave|Descrição|
+|-----|---------|
+|dashboard_custom_page|Pode ser `null` ou a URL de uma pagina para ser exibida na `dashboard`|

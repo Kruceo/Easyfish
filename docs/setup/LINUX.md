@@ -81,7 +81,7 @@ npm run build
 
 Isso vai gerar novos arquivos dentro da pasta `dist`, estes são todos os arquivos necessários para o frontend.
 
-Existem varias formas de prosseguir a partir daqui, podemos usar servidores como `Nginx` e `Apache` ou até mesmo afim ser rapido e pratico, utilizar `python http server` e o próprio `vite`.
+Existem varias formas de prosseguir a partir daqui, podemos usar servidores como `Nginx` e `Apache` ou até mesmo afim de ser rapido e pratico, utilizar `python http server` e o próprio `vite`.
 
 Neste exemplo utilizaremos o `vite` como servidor por ser mais prático, mas para produção recomendamos o `Nginx`.
 
@@ -93,3 +93,9 @@ npx vite --host --port 8081
 Esse comando iniciara um servidor de testes na porta 8081.
 
 Considere utilizar o `Nginx` ou outro servidor de sua confiança para produção.
+
+A partir daqui você pode acessar http://localhost:8081 (ou o endereço posteriormente configurado).
+
+Se tudo ocorreu bem, você vai chegar a tela de login.
+
+Para criar um usuario e senha você pode executar o `userManager.mjs`, encontrado dentro da pasta `tools` do backend.

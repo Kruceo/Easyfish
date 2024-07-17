@@ -7,5 +7,6 @@
     "protocol": "http",
     "port": "8888"
   },
-  "dashboard_custom_page": null
+  "dashboard_custom_page":null
 }
+
